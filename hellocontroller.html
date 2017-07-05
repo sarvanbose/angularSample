@@ -1,0 +1,19 @@
+<html ng-app>
+<body>
+	<div ng-controller="hellocontroller">
+		<p> {{greetings.text}}</p>
+	</div>
+</body>
+
+<script src="angular.min.js"></script>
+<script>
+var demoApp = angular.module("demoApp", []);
+demoApp.controller("hellocontroller", function($scope) {
+	$scope.greetings = [{text : "Hello World"}];
+});
+
+/*function hellocontroller($scope) {
+	$scope.greetings = [{text : "Hello World"}];
+} */
+</script>
+</html>

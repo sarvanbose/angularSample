@@ -1,0 +1,38 @@
+<html ng-app="myapp">
+<head>
+<script src="../angular.min.js"></script>
+<script>
+	var myapp = angular.module("myapp", []);
+	
+	myapp.controller("mycontroller", function($scope){
+		$scope.greetings = [{name: "test"}];
+	});
+	
+	 
+</script>
+</head>
+<body>	
+	<div>
+		<input type="text" ng-model="name">{{name}}</input>
+	</div>
+	<br ></br>
+	<div ng-controller="mycontroller">
+		<input type="text" ng-model="name1">
+		<p ng-repeat="data in greetings | filter:name1">{{data.name}}</p>
+	</div>
+	<br ></br>
+	<div ng-show="showdetails">
+		<div> Hello World
+		</div>		
+	</div>	
+	<button ng-click="showdetails = ! showdetails"> Show / Hide </button>	
+	<br ></br>
+	
+	<p>count {{count}}</p>
+	<button ng-click="count = count + 1" ng-init="count=0"> Increment </button>
+	<br ></br>
+</body>
+
+
+
+</html>

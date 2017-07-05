@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example12-production</title>
+  <script src="http://code.angularjs.org/snapshot/angular.js"></script>
+  <script>
+  (function(angular) {
+  'use strict';
+angular.module('docsTemplateUrlDirective', [])
+  .controller('Controller', ['$scope', function($scope) {
+    $scope.customer = {
+      name: 'Naomi',
+      address: '1600 Amphitheatre'
+    };
+  }])
+  .directive('myCustomers', function() {
+    return {
+      //templateUrl: 'Nam'
+	  restrict: 'A',
+	  template: 'Name: {{customer.name}}, Address : {{customer.address}}'
+    };
+  });
+})(window.angular);
+
+  </script>
+  
+
+  
+</head>
+<body ng-app="docsTemplateUrlDirective">
+  <div ng-controller="Controller">
+  <div my-customers></div>
+</div>
+</body>
+</html>
